@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061923">
+  <title>Poseidons Schlibowitz-Countdown</title>
+  <style>
+    :root{--navy:#04131d;--sea:#0b5870;--foam:#d9fbff;--gold:#f2c35b;--glass:rgba(4,19,29,.64)}
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;color:white;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 50% 0,#147c91 0,#073246 40%,#020b12 100%);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:34px 34px}
+    .app{min-height:100svh;display:grid;grid-template-columns:minmax(100px,1fr) minmax(280px,720px) minmax(100px,1fr);align-items:center;gap:18px;padding:30px 20px 80px;position:relative}
+    .hero{width:min(280px,100%);filter:drop-shadow(0 16px 20px #0008);opacity:.95}.right{transform:scaleX(-1)}
+    .card{text-align:center;background:var(--glass);border:1px solid #bdf7ff33;border-radius:28px;padding:clamp(26px,6vw,54px) clamp(18px,5vw,44px);box-shadow:0 28px 90px #0008,inset 0 1px #fff3;backdrop-filter:blur(12px);position:relative;z-index:2}
+    .eyebrow{letter-spacing:.24em;text-transform:uppercase;color:#bfeef5;font-size:12px;font-weight:800}.trident{font-size:34px;color:var(--gold);margin:8px 0}
+    h1{font-size:clamp(29px,6vw,56px);line-height:.95;margin:0;text-transform:uppercase;letter-spacing:-.04em}p{color:#cdebf0;margin:16px 0 28px}
+    .timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.unit{padding:18px 6px;border-radius:16px;background:#00101999;border:1px solid #fff2}.num{font-size:clamp(28px,6vw,54px);font-weight:900;font-variant-numeric:tabular-nums;line-height:1}.label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9bcbd4;margin-top:8px}
+    .status{margin-top:24px;font-weight:800;color:var(--gold)}.share{margin-top:18px;border:0;border-radius:999px;padding:11px 18px;font:inherit;font-weight:800;color:#06202b;background:var(--foam);cursor:pointer}.share:active{transform:scale(.97)}
+    .waves{position:fixed;left:0;right:0;bottom:0;height:70px;background:linear-gradient(180deg,transparent,#0c657b);z-index:3}.waves:before{content:"";position:absolute;inset:-22px -30px auto;height:50px;background:radial-gradient(ellipse at 50% 100%,transparent 0 20px,#d9fbff 21px 24px,transparent 25px 44px);background-size:88px 50px;opacity:.7;animation:drift 7s linear infinite}@keyframes drift{to{transform:translateX(88px)}}
+    @media(max-width:850px){.app{grid-template-columns:1fr;padding:18px 14px 70px}.hero{position:absolute;width:135px;top:16px;opacity:.28}.left{left:-28px}.right{right:-28px}.card{margin-top:55px}.timer{gap:6px}.unit{padding:15px 3px}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <svg class="hero left" viewBox="0 0 260 440" aria-label="Poseidon mit Schlibowitz-Flasche" role="img"><defs><linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd0a0"/><stop offset="1" stop-color="#ad633f"/></linearGradient></defs><path fill="#e7faff" d="M92 84c-18 21-8 45 4 58-31 13-50 52-45 94l19 108h122l18-108c6-41-12-79-44-94 13-14 22-38 3-59-20-23-57-22-77 1z"/><path fill="url(#skin)" d="M93 102c4-33 70-34 75 0 4 29-11 54-37 54s-42-25-38-54zm-9 55c-23 6-45 29-50 55-5 25 11 42 31 32l27-40-8-47zm94 0c22 6 44 30 49 55 5 25-10 42-30 32l-28-40 9-47z"/><path fill="#bcecf3" d="M94 118c8 20 23 28 37 29 15-1 29-9 37-29-2 37-7 70-37 82-29-12-36-45-37-82z"/><path fill="#0b4862" d="M70 220c29-25 90-25 121 0l-13 133H83L70 220z"/><path fill="#f2c35b" d="M33 38h8v245h-8zM15 60l22-38 22 38-18-9v34h-8V51z"/><g transform="translate(185 205) rotate(16)"><rect width="35" height="100" rx="8" fill="#e8f1f4"/><rect x="9" y="-28" width="17" height="34" rx="3" fill="#c9d3d8"/><rect x="4" y="38" width="27" height="35" rx="3" fill="#eee1b7"/><text x="17.5" y="51" fill="#26353a" font-size="6" text-anchor="middle" font-weight="bold">SCHLIBO</text><text x="17.5" y="61" fill="#26353a" font-size="6" text-anchor="middle" font-weight="bold">WITZ</text></g></svg>
+    <section class="card">
+      <div class="eyebrow">Der Kapitän hält durch</div><div class="trident">♆</div>
+      <h1>Poseidons<br>Schlibowitz-Countdown</h1>
+      <p>Freigabe am Donnerstag, 3. September 2026, um 09:00 Uhr.</p>
+      <div class="timer" aria-live="polite">
+        <div class="unit"><div class="num" id="days">00</div><div class="label">Tage</div></div>
+        <div class="unit"><div class="num" id="hours">00</div><div class="label">Stunden</div></div>
+        <div class="unit"><div class="num" id="minutes">00</div><div class="label">Minuten</div></div>
+        <div class="unit"><div class="num" id="seconds">00</div><div class="label">Sekunden</div></div>
+      </div>
+      <div class="status" id="status">🌊 Bis dahin: Wasser für den Kapitän.</div>
+      <button class="share" id="share" type="button">⚓ Countdown teilen</button>
+    </section>
+    <svg class="hero right" viewBox="0 0 260 440" aria-hidden="true"><use href="#poseidon"/></svg>
+  </main><div class="waves"></div>
+  <script>
+    const target=Date.parse('2026-09-03T09:00:00+02:00'),pad=n=>String(n).padStart(2,'0');
+    document.querySelector('.right').innerHTML=document.querySelector('.left').innerHTML;
+    const ids=['days','hours','minutes','seconds'].map(id=>document.getElementById(id));
+    function tick(){const ms=Math.max(0,target-Date.now()),t=Math.floor(ms/1000);[Math.floor(t/86400),Math.floor(t%86400/3600),Math.floor(t%3600/60),t%60].forEach((v,i)=>ids[i].textContent=pad(v));if(ms<=0)document.getElementById('status').textContent='🔱 ES IST SOWEIT – SCHLIBOWITZ FREI! 🥃'}
+    tick();setInterval(tick,1000);
+    document.getElementById('share').onclick=async()=>{const data={title:document.title,text:'Poseidons Schlibowitz-Countdown – wie lange hält der Kapitän noch durch?',url:location.href};if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);document.getElementById('share').textContent='✓ Link kopiert';}};
+  </script>
+</body>
+</html>
